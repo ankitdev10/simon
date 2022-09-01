@@ -63,11 +63,11 @@ function checkAnswer(currentLevel){
     else{
         new Audio("sounds/wrong.mp3").play()
         $("body").addClass("game-over")
+        $("h3").html("The last correct sequence was "+  gamePattern.join("-"))
         setTimeout(function(){
             $("body").removeClass("game-over")
         }, 500)
         $("#level-title").text("Game Over, Press Any Key to Restart");
-        $("h3").html("The correct sequence was "+  gamePattern.join("-"))
         startOver()
     }
 
